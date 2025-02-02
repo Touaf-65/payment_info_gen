@@ -37,3 +37,6 @@ def home(request):
         'payments': payments
     }
     return render(request, 'bill/home.html', context)
+
+def about(request):
+    return render(request, 'bill/about.html')
