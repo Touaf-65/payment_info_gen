@@ -1,0 +1,30 @@
+{% extends 'bill/base.html' %}
+{% block content %}
+    <h1>Home!</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Méthode de Paiement</th>
+                <th>Montant</th>
+                <th>Statut</th>
+                <th>Date de Paiement</th>
+                <th>Heure de Paiement</th>
+                <th>Client</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment.id }}</td>
+                <td>{{ payment.payment_method }}</td>
+                <td>{{ payment.amount }} €</td>
+                <td>{{ payment.status }}</td>
+                <td>{{ payment.payment_date }}</td>
+                <td>{{ payment.payment_time }}</td>
+                <td>{{ payment.client }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
